@@ -1,24 +1,57 @@
-# README
+# Rails 5 automating deployments with ansible, capistrano, postgresql.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Tested on Ubuntu 16.04 
 
-Things you may want to cover:
+### Step 1
 
-* Ruby version
+Setup SSH keys [(manual)](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2)
 
-* System dependencies
+### Step 2
 
-* Configuration
+Install Ansible
 
-* Database creation
+```
+sudo apt-get install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install ansible
+```
+### Step 3
 
-* Database initialization
+Download this repo and unzip.
 
-* How to run the test suite
+### Step 4
 
-* Services (job queues, cache servers, search engines, etc.)
+Change in files:
 
-* Deployment instructions
+**/config/deploy/production.rb**
 
-* ...
+`ip = 'enter_your_server_ip'`
+
+**config/deploy.rb**
+
+```
+
+# Set your repository url
+set :repo_url, 'https://github.com/Syntaxys-dll/Rails-5-auto-deploy-boilerplate.git'
+
+# Set deploy directory
+set :deploy_to, '/home/deploy/applications/test'
+
+```
+
+### Step 5
+
+Add ssh keys from ~/.ssh to **yourappfolder**/config/provision/keys/
+
+### Step 6
+
+Run playbook install. Change ip to your server.
+
+`cd config/provision && ansible-playbook -i188.226.255.173, playbook.yml`
+
+### Step 7
+
+Run:
+
+`cap production deploy`
