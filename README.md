@@ -43,6 +43,9 @@ set :deploy_to, '/home/deploy/applications/test'
 ### Step 5
 
 Add ssh keys from ~/.ssh to **yourappfolder**/config/provision/keys/
+```
+cp ~/.ssh/id_* config/provision/keys
+```
 
 ### Step 6
 
