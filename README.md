@@ -64,3 +64,32 @@ Touches your :linked_files, so they'll be created if they don't exist:
 Run:
 
 `cap production deploy`
+
+### Step 9
+
+Generate [(secret_key_base)](http://stackoverflow.com/questions/23180650/how-to-solve-error-missing-secret-key-base-for-production-environment-rai). 
+
+Or my solution:
+
+1). Run on local project:
+
+`RAILS_ENV=production rails secret`
+
+2). Copy key, its like '2ac821f79e0ea3291e47db43a995bc7044c9dc20ea8d9b8f0c4' 
+3). Connect to production server 
+
+`ssh deploy@your_server_ip`
+
+4). Open secrets.yml:
+
+`nano /home/deploy/applications/youe_app_name/shared/config/secrets.yml`
+
+5). Paste code and save:
+
+```
+production:
+  secret_key_base: 2ac821f79e0ea3291e47db43a995bc7044c9dc20ea8d9b8f0c4
+```
+6). Restart puma on local project:
+
+`cap production puma:restart`
