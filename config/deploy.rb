@@ -1,8 +1,3 @@
-# Deploy with Ansible on a new server:
-#   $ (cd config/provision && ansible-playbook -i178.62.254.62, playbook.yml)
-#   $ bundle exec cap production deploy
-#   $ bundle exec cap production rake task=db:seed
-
 lock '3.7.2'
 
 set :application, 'test'
