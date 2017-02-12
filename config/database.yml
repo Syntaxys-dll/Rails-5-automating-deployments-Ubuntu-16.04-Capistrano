@@ -11,11 +11,11 @@ development:
   host: localhost
   username: syntaxys
   password: 35748199q
-  database: {{ name }}_dev
+  database: test_dev
 
 production:
   <<: *setup
-  database: {{ name }}_production
+  database: test_production
 
 test:
   adapter: sqlite3
