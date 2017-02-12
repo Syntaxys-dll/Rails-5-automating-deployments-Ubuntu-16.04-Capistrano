@@ -55,6 +55,12 @@ Run playbook install. Change ip to your server.
 
 ### Step 7
 
+Touches your :linked_files, so they'll be created if they don't exist:
+
+`cap production linked_files:touch`
+
+### Step 8
+
 Run:
 
 `cap production deploy`
