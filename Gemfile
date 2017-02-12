@@ -35,18 +35,29 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+gem "capistrano-db-tasks", require: false
+
 group :development, :test do
+  gem 'listen', '~> 3.0.5'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-end
-
-group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
-  gem 'listen', '~> 3.0.5'
+  gem 'web-console'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Гем, который добавляет специфические для Rails таски, такие как прогон миграций и компиляция ассетов
+  gem 'capistrano-rails'
+  # Гем, добавляющий возможности bundle к capistrano
+  gem 'capistrano-bundler'
+  # Добавление поддержки Rbenv (менеджера версий для Ruby)
+  gem 'capistrano-rbenv'
+  # Интеграция пумы и капистрано
+  gem 'capistrano3-puma'
+  # Fix for problem with linked files on first deploy
+  gem 'capistrano-touch-linked-files'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

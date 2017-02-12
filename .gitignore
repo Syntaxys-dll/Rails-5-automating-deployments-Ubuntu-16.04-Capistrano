@@ -19,3 +19,10 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore ssh keys
+config/provision/keys/id_rsa
+config/provision/keys/id_rsa.pub
+
+# Ignore capistrano logs
+log/capistrano.log

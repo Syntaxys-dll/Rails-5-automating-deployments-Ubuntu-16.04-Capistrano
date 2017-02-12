@@ -1,0 +1,13 @@
+production:
+  adapter: postgresql
+  username: postgres
+  encoding: utf8
+  pool: 8
+  database: test_production
+
+development:
+  adapter: postgresql
+  username: postgres
+  encoding: utf8
+  pool: 8
+  database: test_tvr_production
