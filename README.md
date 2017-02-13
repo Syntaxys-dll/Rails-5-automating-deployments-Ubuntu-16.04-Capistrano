@@ -76,13 +76,14 @@ Or my solution:
 `RAILS_ENV=production rails secret`
 
 2). Copy key, its like '2ac821f79e0ea3291e47db43a995bc7044c9dc20ea8d9b8f0c4' 
+
 3). Connect to production server 
 
 `ssh deploy@your_server_ip`
 
 4). Open secrets.yml:
 
-`nano /home/deploy/applications/youe_app_name/shared/config/secrets.yml`
+`nano /home/deploy/applications/YOUR_APP_NAME/shared/config/secrets.yml`
 
 5). Paste code and save:
 
