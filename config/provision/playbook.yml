@@ -91,23 +91,18 @@
 
     - name: 'rbenv | set global ruby {{ ruby_version }}'
       shell: 'RBENV_ROOT={{ rbenv_root }} PATH="$RBENV_ROOT/bin:$PATH" rbenv global {{ ruby_version }}'
-      when: 'ruby_installed|failed'
 
     - name: 'rbenv | rehash'
       shell: 'RBENV_ROOT={{ rbenv_root }} PATH="$RBENV_ROOT/bin:$PATH" rbenv rehash'
-      when: 'ruby_installed|failed'
 
     - name: 'rbenv | create .gemrc'
       lineinfile: 'dest={{ home }}/.gemrc owner={{ user }} group={{ user }} mode=0644 line="gem: --no-ri --no-rdoc" create=yes'
-      when: 'ruby_installed|failed'
 
     - name: 'ruby | install bundler'
       shell: 'RBENV_ROOT={{ rbenv_root }} PATH="$RBENV_ROOT/bin:$PATH" rbenv exec gem install bundler'
-      when: 'ruby_installed|failed'
 
     - name: 'rbenv | change owner'
       shell: 'chown -R {{ user }}:{{ user }} {{ rbenv_root }}'
-      when: 'ruby_installed|failed'
 
     ### Set up locales ###
     - name: 'locales | check locales installed'
