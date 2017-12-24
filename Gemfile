@@ -40,7 +40,9 @@ gem 'jbuilder', '~> 2.5'
 gem "capistrano-db-tasks", require: false
 gem 'backup'
 gem 'whenever'
-
+gem 'slim'
+# Slim template generator
+gem 'slim-rails', '3.1.1'
 group :development, :test do
   gem 'listen', '~> 3.0.5'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
