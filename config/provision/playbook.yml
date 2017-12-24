@@ -7,7 +7,7 @@
       raw: sudo apt-get -y install python-simplejson
 
   vars:
-    ruby_version: '2.3.1'
+    ruby_version: '2.4.0'
     user: 'deploy'
     home: '/home/{{ user }}'
     rbenv_root: '{{ home }}/.rbenv'
