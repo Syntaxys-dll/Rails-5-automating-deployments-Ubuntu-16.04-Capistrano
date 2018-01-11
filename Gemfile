@@ -37,7 +37,6 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem "capistrano-db-tasks", require: false
-gem 'backup'
 gem 'whenever'
 gem 'slim'
 # Slim template generator
