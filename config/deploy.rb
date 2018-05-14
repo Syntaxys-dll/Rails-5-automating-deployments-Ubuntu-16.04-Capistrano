@@ -1,4 +1,4 @@
-lock '3.10.1'
+lock '3.10.2'
 
 set :application, 'test'
 set :repo_url, 'git@github.com:Syntaxys-dll/Rails-5-automating-deployments-Ubuntu-16.04-Capistrano.git'
